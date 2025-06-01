@@ -1,0 +1,45 @@
+name-template: "v$RESOLVED_VERSION"
+tag-template: "v$RESOLVED_VERSION"
+
+categories:
+  - title: ":boom: Breaking Changes"
+    label: breaking
+
+  - title: ":rocket: Features"
+    label: feature
+
+  - title: ":beetle: Fixes"
+    label: bug
+
+  - title: ":racehorse: Performance"
+    label: performance
+
+  - title: ":rotating_light: Testing"
+    label: testing
+
+  - title: ":construction_worker: Continuous Integration"
+    label: ci
+
+  - title: ":hammer_and_spanner: Infrastructure"
+    label: infrastructure
+
+  - title: ":books: Documentation"
+    label: documentation
+
+  - title: ":hammer: Refactoring"
+    label: refactoring
+
+  - title: ":package: Dependencies"
+    label: dependencies
+
+exclude-labels:
+  - skip-changelog
+
+replacers:
+  # POD Jira project
+  - search: "/([A-Z]{1,3}-[0-9]{1,9})/g"
+    replace: "[$1](https://gleams.atlassian.net/browse/$1)"
+
+template: |
+  ## Changes
+  $CHANGES
