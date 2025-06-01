@@ -41,6 +41,9 @@ jobs:
       - name: Install dev packages via poetry
         run: poetry install --with dev
 
+      - name: Build package via poetry
+        run: poetry build
+
       - name: Publish Draft Release
         uses: release-drafter/release-drafter@v6
         with:
